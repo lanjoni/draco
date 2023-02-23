@@ -16,7 +16,7 @@ elif [ $opt -eq 2]; then
     sudo mv draco /usr/bin
 elif [ $opt -eq 3 ]; then
     sudo pacman -Su
-    sudo pacman -Sy gcc g++ make qt qt5
+    sudo pacman -Sy gcc make qt qt5
     sudo chmod +x draco
     sudo mv draco /usr/bin
 elif [ $opt -eq 4 ]; then
