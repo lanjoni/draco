@@ -1,6 +1,6 @@
 # Draco
 
-A simple project manager for C++ that allows creation, manipulation and compilation.
+A simple project manager for C++ based on QT5 and QMAKE that allows creation, manipulation and compilation.
 
 ## Description
 
