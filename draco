@@ -72,6 +72,9 @@ elif [ $1 = "run" ]; then
     qmake
     make
     $loc/$dir
+
+elif [ $1 = "help" ] || [ $1 = "-h" ] || [ $1 = "--help" ]; then
+    echo -e "Draco v0.1\nUsage:\ncreate: create a new project;\nclass: create a new class;\nrun: make and run project;"
 fi
 else
     echo "You need to provide at least one argument to use."
