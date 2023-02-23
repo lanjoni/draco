@@ -9,7 +9,7 @@ if [ $opt -eq 1 ]; then
     sudo apt-get install gcc g++ make qt5-qmake
     sudo chmod +x draco 
     sudo mv draco /usr/bin
-elif [ $opt -eq 2]; then
+elif [ $opt -eq 2 ]; then
     sudo dnf update
     sudo dnf install gcc g++ make qt-devel qt5-devel
     sudo chmod +x draco
