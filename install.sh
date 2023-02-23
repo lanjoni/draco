@@ -27,8 +27,8 @@ elif [ $opt -eq 4 ]; then
 elif [ $opt -eq 5 ]; then
     brew update
     brew install gcc g++ make qt
-    sudo chmod +x draco
-    sudo mv draco /usr/local/bin 
+    sudo chmod +x draco_mac
+    sudo mv draco_mac /usr/local/bin/draco
 else
     echo -e "\nError: Option not found. Try again."
 fi

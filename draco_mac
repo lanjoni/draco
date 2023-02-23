@@ -1,0 +1,81 @@
+#!/bin/bash
+
+if [ -n "$1" ]; then # Verify arguments
+if [ $1 = "create" ]; then # Create a new project
+    if [ -n "$2" ]; then # Verify second argument
+        mkdir $2
+        touch ./$2/main.cpp
+
+cat << EOF > ./$2/main.cpp
+#include <cstdlib>
+#include <iostream>
+
+int main(int argc, char *argv[]){
+    std::cout << "Hello World!" << "\n";
+
+    return 0;
+}
+EOF
+
+        echo "Project created successfully."
+    else
+        echo "You need to provide the name of the project you want to create."
+    fi
+
+elif [ $1 = "class" ]; then
+    if [ -n "$2" ]; then
+        touch $2.h 
+        touch $2.cpp
+
+        upper=$(echo "$2" | tr '[:lower:]' '[:upper:]')_H
+
+cat << EOF > ./$2.h
+#ifndef $upper
+#define $upper
+
+class $2 {
+    public:
+        $2();
+        $2(const $2& orig);
+        virtual ~$2();
+
+    private:
+}
+
+#endif /* $upper */
+EOF
+
+cat << EOF > ./$2.cpp
+#include "$2.h"
+
+$2::$2() {
+}
+
+$2::$2(const $2& orig) {
+}
+
+$2::~$2() {
+}
+EOF
+
+    echo "Class created successfully."
+
+    else
+        echo "You need to provide the name of the class you want to create."
+    fi
+
+elif [ $1 = "run" ]; then
+    loc=$(pwd)
+    dir=$(basename "$(pwd)")
+
+    qmake -project
+    qmake
+    make
+    $loc/$dir.app/Contents/MacOS/$dir
+
+elif [ $1 = "help" ] || [ $1 = "-h" ] || [ $1 = "--help" ]; then
+    echo -e "Draco v0.1\nUsage:\ncreate: create a new project;\nclass: create a new class;\nrun: make and run project;"
+fi
+else
+    echo "You need to provide at least one argument to use."
+fi
