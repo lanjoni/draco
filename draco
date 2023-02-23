@@ -40,7 +40,7 @@ class $2 {
         virtual ~$2();
 
     private:
-}
+};
 
 #endif /* $upper */
 EOF
