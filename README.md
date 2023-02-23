@@ -54,8 +54,6 @@ $ draco help
 
 ## Authors
 
-Contributors names and contact info
-
 João Augusto Lissoni Lanjoni 
 [@gutolanjoni](https://twitter.com/gutolanjoni)
 
