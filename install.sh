@@ -6,7 +6,7 @@ read opt
 
 if [ $opt -eq 1 ]; then
     sudo apt-get update
-    sudo apt-get install gcc g++ make qt5-qmake qtbase5-dev qtbase5-dev-tools
+    sudo apt-get install gcc g++ make qt5-qmake qtbase5-dev
     sudo chmod +x draco 
     sudo mv draco /usr/bin
 elif [ $opt -eq 2 ]; then
