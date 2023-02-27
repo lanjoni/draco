@@ -59,6 +59,11 @@ João Augusto Lissoni Lanjoni
 
 ## Version History
 
+* 0.1.2
+    * Installation fix with Ubuntu
+    * Correction of directories for installation
+    * Package fix for macOS, removing g++
+
 * 0.1
     * Initial Release
 
